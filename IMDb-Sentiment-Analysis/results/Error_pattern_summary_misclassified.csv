@@ -1,0 +1,9 @@
+Error Pattern,Count,Percentage of Misclassified Samples
+"Naive Bayes wrong, stronger models correct",1413,25.86%
+"Traditional models wrong, DistilBERT correct",1269,23.22%
+"Traditional models correct, DistilBERT wrong",875,16.01%
+All models wrong,824,15.08%
+"Logistic Regression wrong, others correct",626,11.45%
+Only Logistic Regression correct,248,4.54%
+Only Naive Bayes correct,210,3.84%
+Total Misclassified Samples,5465,100.0%

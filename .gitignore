@@ -1,0 +1,27 @@
+﻿# Datasets
+aclImdb/
+data/
+datasets/
+
+# Model files
+*.pt
+*.pth
+*.bin
+*.safetensors
+*.ckpt
+*.onnx
+
+# Python cache
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Secrets
+.env
+*.key
+*.pem

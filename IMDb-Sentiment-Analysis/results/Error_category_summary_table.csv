@@ -1,0 +1,10 @@
+,Ambiguous or mixed sentiment,Genre-specific vocabulary,Long review / truncation risk,Negation / rhetorical framing,Other context-dependent error,Sentiment shift / contrast,Weak or implicit sentiment,Total
+All models wrong,1,11,0,14,1,2,1,30
+"Logistic Regression wrong, others correct",2,8,0,17,1,0,2,30
+"Naive Bayes wrong, stronger models correct",1,11,0,17,1,0,0,30
+Only Logistic Regression correct,0,15,0,15,0,0,0,30
+Only Naive Bayes correct,0,16,0,13,0,1,0,30
+"Traditional models correct, DistilBERT wrong",0,3,15,10,0,0,2,30
+"Traditional models wrong, DistilBERT correct",2,11,0,16,1,0,0,30
+Total,6,75,15,102,4,3,5,210
+Percentage of Total,2.86%,35.71%,7.14%,48.57%,1.90%,1.43%,2.38%,100.00%
