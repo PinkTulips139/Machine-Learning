@@ -30,7 +30,7 @@ The project uses the **IMDb Large Movie Review Dataset** for binary sentiment cl
 - Balanced positive and negative labels
 - Document-level movie reviews containing long-form opinions, sentiment shifts, mixed evaluation, and contextual language
 
-The dataset is not redistributed in this repository. Download it from its official source and update the local dataset path in the notebook before running the experiments.
+The original dataset is not redistributed in this repository. The dataset can be obtained from the official [IMDb Large Movie Review Dataset](https://ai.stanford.edu/~amaas/data/sentiment/) page. Before running the notebook, please download the dataset locally and update the dataset path accordingly.
 
 ---
 
