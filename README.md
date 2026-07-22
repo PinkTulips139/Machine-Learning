@@ -1,6 +1,6 @@
 # Machine Learning Research Archive
 
-This repository archives completed machine-learning coursework and research projects, with an emphasis on reproducible experiments, model evaluation, and transparent discussion of limitations.
+This repository archives completed machine-learning research projects, with an emphasis on reproducible experiments, model evaluation, and transparent discussion of limitations.
 
 ## Projects
 
