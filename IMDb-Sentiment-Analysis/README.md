@@ -181,23 +181,19 @@ The study used only IMDb movie reviews. Results may not generalize to product re
 
 The experiment included Naive Bayes, Logistic Regression, and DistilBERT, but not stronger encoders, lighter Transformers, or large language models.
 
-### 4. No correct-sample control group in the qualitative error analysis
-
-The representative examples came from the misclassified pool. Without a matched set of correctly classified reviews, the study cannot determine whether a linguistic cue is specifically associated with failure.
-
-### 5. Long-text claims were not fully validated
+### 4. Long-text claims were not fully validated
 
 DistilBERT used a maximum length of 256 tokens, but the project did not systematically compare 128, 256, and 512 tokens or verify whether decisive sentiment information appeared after the truncation point.
 
-### 6. Limited uncertainty information
+### 5. Limited uncertainty information
 
 The archived outputs do not provide a complete analysis of probability margins, entropy, calibration, or prediction confidence.
 
-### 7. No formal statistical significance testing
+### 6. No formal statistical significance testing
 
 The project did not include multi-seed mean ± standard deviation, bootstrap confidence intervals, or McNemar tests.
 
-### 8. Hardware-dependent efficiency comparison
+### 7. Hardware-dependent efficiency comparison
 
 Traditional models and DistilBERT were evaluated on different compute devices, so the timing comparison is practical but not hardware-neutral.
 
