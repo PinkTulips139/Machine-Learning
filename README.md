@@ -4,8 +4,8 @@
 
 <p align="center">
   <img src="docs/assets/status/models.svg" alt="Models: 3">
-  <img src="docs/assets/status/best-f1.svg" alt="Best full-data F1: 0.914496">
-  <img src="docs/assets/status/error-pool.svg" alt="Error pool: 5,465 reviews misclassified by at least one evaluated model">
+  <img src="docs/assets/status/best-f1.svg" alt="Best full-data F1: 0.9145">
+  <img src="docs/assets/status/error-pool.svg" alt="Error union: 5,465 test reviews misclassified by at least one evaluated model">
   <img src="docs/assets/status/scope.svg" alt="Scope: research archive">
 </p>
 
@@ -13,7 +13,7 @@
 
 An archive of completed machine-learning experiments, currently centered on an IMDb sentiment-classification study with traditional baselines, DistilBERT, data-scale experiments, and exploratory error analysis.
 
-[Quick Start](#quick-start) · [At a Glance](#at-a-glance) · [Results Snapshot](#results-snapshot) · [Project](#imdb-sentiment-analysis) · [Repository Structure](#repository-structure) · [Scope and Limitations](#scope-and-limitations)
+[Quick Start](#quick-start) · [At a Glance](#at-a-glance) · [Results Snapshot](#results-snapshot) · [Featured Project](#imdb-sentiment-analysis) · [Repository Structure](#repository-structure) · [Scope and Limitations](#scope-and-limitations)
 
 ## Quick Start
 
@@ -56,13 +56,7 @@ These values are read from the archived formal result CSV. Timing values are har
 
 ## IMDb Sentiment Analysis
 
-The current project compares:
-
-- TF-IDF + Multinomial Naive Bayes;
-- TF-IDF + Logistic Regression;
-- DistilBERT.
-
-The study examines predictive performance, training and inference cost, sensitivity to training-data size, and exploratory error patterns. See the [complete project README](IMDb-Sentiment-Analysis/README.md) for research questions, model settings, full results, error-analysis boundaries, reproducibility notes, and proposed extensions.
+A completed comparison of sparse traditional baselines and DistilBERT, covering predictive performance, computational cost, training-data scale, and exploratory error patterns. See the [complete project README](IMDb-Sentiment-Analysis/README.md) for research questions, model settings, full results, error-analysis boundaries, reproducibility notes, and proposed extensions.
 
 ## Repository Structure
 
