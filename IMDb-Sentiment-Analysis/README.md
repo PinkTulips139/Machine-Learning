@@ -1,4 +1,47 @@
+<p align="center">
+  <img src="docs/assets/project-banner.svg" alt="IMDb sentiment analysis banner with review-token blocks, attention connections, and three model comparison bars" width="100%">
+</p>
+
+<p align="center">
+  <img src="../docs/assets/status/models.svg" alt="Models: 3">
+  <img src="../docs/assets/status/best-f1.svg" alt="Best full-data F1: 0.914496">
+  <img src="../docs/assets/status/error-pool.svg" alt="Error pool: 5,465 reviews misclassified by at least one evaluated model">
+  <img src="../docs/assets/status/scope.svg" alt="Scope: research archive">
+</p>
+
 # IMDb Sentiment Analysis
+
+An archived three-model study of binary movie-review sentiment classification, data efficiency, computational cost, and exploratory error patterns.
+
+[Quick Start](#quick-start) · [Research Questions](#research-questions) · [Dataset](#dataset) · [Models](#models) · [Main Results](#main-results) · [Error Analysis](#error-pattern-analysis) · [Limitations](#additional-project-limitations) · [Future Work](#future-work-proposed-not-implemented) · [Reproducibility](#reproducibility-notes)
+
+## Quick Start
+
+| Goal | Open |
+|---|---|
+| Read the complete study record | Continue through this README |
+| Inspect the experiment workflow | [IMDb sentiment analysis notebook](notebooks/IMDb_sentiment_analysis.ipynb) |
+| Review archived outputs | [Results directory](results) |
+| Check interpretation boundaries | [Representative-sample limitation](#important-limitation-representative-error-samples) · [Additional limitations](#additional-project-limitations) |
+| Return to the archive | [Machine Learning Research Archive](../README.md) |
+
+To rerun the notebook, download the official IMDb dataset separately, update local paths, and verify the Python/CUDA environment. Exact timing is not expected to transfer across hardware.
+
+## Results Snapshot
+
+Full training-data setting:
+
+| Model | F1 |
+|---|---:|
+| TF-IDF + Naive Bayes | **0.846688** |
+| TF-IDF + Logistic Regression | **0.883284** |
+| DistilBERT | **0.914496** |
+
+<p align="center">
+  <img src="../docs/assets/diagrams/model-comparison.svg" alt="Full training-data F1 comparison: Naive Bayes 0.846688, Logistic Regression 0.883284, and DistilBERT 0.914496" width="100%">
+</p>
+
+The values above come from the archived formal result CSV. The detailed table below retains accuracy, precision, recall, training time, inference time, and hardware qualifications.
 
 ## Project Status
 
@@ -199,7 +242,13 @@ Traditional models and DistilBERT were evaluated on different compute devices, s
 
 ---
 
-## Feasible Improvements
+## Future Work (Proposed, Not Implemented)
+
+The following improvements and research extensions were documented for possible continuation. They were **not implemented in this archived study**.
+
+<details>
+<summary><strong>Feasible Improvements</strong></summary>
+
 
 ### A. Rebuild the Diagnostic Dataset
 
@@ -278,7 +327,10 @@ Compare:
 
 ---
 
-## Proposed Research Extensions and Innovation Ideas
+</details>
+
+<details>
+<summary><strong>Proposed Research Extensions and Innovation Ideas</strong></summary>
 
 These ideas were discussed as possible continuations but were **not implemented in this archived project**.
 
@@ -327,6 +379,8 @@ Rather than forcing a binary prediction for every input, the system could identi
 A future study could measure whether model compression, shorter sequence length, or faster inference disproportionately harms difficult linguistic categories.
 
 ---
+
+</details>
 
 ## Reproducibility Notes
 

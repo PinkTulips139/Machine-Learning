@@ -1,61 +1,93 @@
+<p align="center">
+  <img src="docs/assets/repository-banner.svg" alt="Machine Learning research archive banner with token blocks, sparse feature grid, attention connections, and a performance curve" width="100%">
+</p>
+
+<p align="center">
+  <img src="docs/assets/status/models.svg" alt="Models: 3">
+  <img src="docs/assets/status/best-f1.svg" alt="Best full-data F1: 0.914496">
+  <img src="docs/assets/status/error-pool.svg" alt="Error pool: 5,465 reviews misclassified by at least one evaluated model">
+  <img src="docs/assets/status/scope.svg" alt="Scope: research archive">
+</p>
+
 # Machine Learning Research Archive
 
-This repository archives completed machine-learning research projects, with an emphasis on reproducible experiments, model evaluation, and transparent discussion of limitations.
+An archive of completed machine-learning experiments, currently centered on an IMDb sentiment-classification study with traditional baselines, DistilBERT, data-scale experiments, and exploratory error analysis.
 
-## Projects
+[Quick Start](#quick-start) · [At a Glance](#at-a-glance) · [Results Snapshot](#results-snapshot) · [Project](#imdb-sentiment-analysis) · [Repository Structure](#repository-structure) · [Scope and Limitations](#scope-and-limitations)
 
-### IMDb Sentiment Analysis
+## Quick Start
 
-A completed NLP research project comparing:
+| Goal | Open |
+|---|---|
+| Understand the study | [IMDb project README](IMDb-Sentiment-Analysis/README.md) |
+| Inspect the experiment workflow | [IMDb notebook](IMDb-Sentiment-Analysis/notebooks/IMDb_sentiment_analysis.ipynb) |
+| Review archived metrics and figures | [Results directory](IMDb-Sentiment-Analysis/results) |
+| Check limitations and proposed work | [Project limitations](IMDb-Sentiment-Analysis/README.md#additional-project-limitations) · [Future work](IMDb-Sentiment-Analysis/README.md#future-work-proposed-not-implemented) |
 
-- TF-IDF + Multinomial Naive Bayes
-- TF-IDF + Logistic Regression
-- DistilBERT
+The IMDb dataset is not redistributed. Rerunning the notebook requires a separately downloaded dataset and a compatible local Python/CUDA environment.
 
-The project evaluates predictive performance, training and inference cost, sensitivity to training-data size, and exploratory error patterns on the IMDb Large Movie Review Dataset.
+## At a Glance
 
-➡️ See: [`IMDb-Sentiment-Analysis/`](./IMDb-Sentiment-Analysis/)
+| Item | Archived study |
+|---|---|
+| Task | Binary sentiment classification |
+| Dataset | IMDb Large Movie Review Dataset — 25,000 train / 25,000 test reviews |
+| Models | Multinomial Naive Bayes · Logistic Regression · DistilBERT |
+| Best full-data F1 | **0.914496** — DistilBERT |
+| Training-data study | 20% · 50% · 100% |
+| Error pool | **5,465** test reviews misclassified by at least one evaluated model |
+| Status | Completed and archived |
+
+## Results Snapshot
+
+Full training-data setting:
+
+| Model | F1 |
+|---|---:|
+| TF-IDF + Naive Bayes | **0.846688** |
+| TF-IDF + Logistic Regression | **0.883284** |
+| DistilBERT | **0.914496** |
+
+<p align="center">
+  <img src="docs/assets/diagrams/model-comparison.svg" alt="Full training-data F1 comparison: Naive Bayes 0.846688, Logistic Regression 0.883284, and DistilBERT 0.914496" width="100%">
+</p>
+
+These values are read from the archived formal result CSV. Timing values are hardware-dependent: the traditional models ran on CPU and DistilBERT used CUDA acceleration.
+
+## IMDb Sentiment Analysis
+
+The current project compares:
+
+- TF-IDF + Multinomial Naive Bayes;
+- TF-IDF + Logistic Regression;
+- DistilBERT.
+
+The study examines predictive performance, training and inference cost, sensitivity to training-data size, and exploratory error patterns. See the [complete project README](IMDb-Sentiment-Analysis/README.md) for research questions, model settings, full results, error-analysis boundaries, reproducibility notes, and proposed extensions.
 
 ## Repository Structure
 
 ```text
 Machine-Learning/
 ├── IMDb-Sentiment-Analysis/
-│   ├── notebooks/
-│   ├── results/
-│   └── README.md
+│   ├── notebooks/            archived experiment workflow
+│   ├── results/              exported metrics, tables, and figures
+│   ├── docs/assets/          project-level presentation asset
+│   └── README.md             complete project record
+├── docs/assets/              archive-level presentation assets
 ├── .gitignore
 └── README.md
 ```
 
-## Research Principles
-
-This repository is maintained as a research archive rather than an actively developed software product. The main goals are to:
-
-- preserve completed experiments and outputs;
-- document methods and reproducibility constraints;
-- distinguish implemented work from proposed future extensions;
-- record limitations honestly;
-- make the project understandable to supervisors, reviewers, and prospective research collaborators.
-
-## Current Status
-
-**Status:** Completed and archived.
-
-The IMDb project is no longer under active development. Potential improvements and research extensions are documented in the project README, but they should not be interpreted as implemented results.
-
 ## Tools Used
 
-- Python
-- Jupyter Notebook
-- pandas / NumPy
-- scikit-learn
-- PyTorch
-- Hugging Face Transformers
-- Matplotlib
+Python · Jupyter Notebook · pandas · NumPy · scikit-learn · PyTorch · Hugging Face Transformers · Matplotlib
 
-## Notes
+## Scope and Limitations
 
+- This is a completed research archive, not an actively developed software product.
 - The IMDb dataset is not redistributed in this repository.
-- Hardware-dependent timing results should not be interpreted as hardware-neutral benchmarks.
-- Some exploratory error-category outputs are retained for historical completeness but are explicitly marked as preliminary.
+- The 5,465-review error pool is the union of reviews misclassified by at least one model; it is not a count of DistilBERT-only errors.
+- The 210 representative error examples use a balanced inspection design and do not estimate the natural category distribution of the full error pool.
+- Rule-based error categories are exploratory, and the archived study has no multi-seed statistical analysis.
+- Timing comparisons are practical hardware-dependent measurements, not hardware-neutral benchmarks.
+- Difficulty taxonomies, cost-adaptive routing, selective prediction, and other extensions remain proposed and were not implemented.
